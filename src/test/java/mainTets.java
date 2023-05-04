@@ -13,6 +13,7 @@ public class mainTets {
 
         // Crear una instancia del navegador Chrome
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
 
         // Navegar a la página de Google
         driver.get("https://www.google.com");
