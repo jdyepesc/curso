@@ -1,18 +1,18 @@
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class mainTets {
     private static WebDriver driver;
-    @BeforeAll
+    @BeforeTest
     public static void setUp() {
         // Establecer la propiedad del sistema para indicar la ubicación del driver de Chrome
         System.setProperty("webdriver.chrome.driver", "C://driver/chromedriver.exe");
 
         // Crear una instancia del navegador Chrome
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
 
         // Navegar a la página de Google
         driver.get("https://www.google.com");
@@ -22,7 +22,7 @@ public class mainTets {
         // Imprimir el título de la página
         System.out.println("El título de la página es: " + driver.getTitle());
     }
-    @AfterAll
+    @AfterTest
     public static  void tearDown(){
         // Cerrar el navegador
         driver.quit();
