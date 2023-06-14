@@ -43,19 +43,24 @@ public class mainTets {
         WebElement emailW = driver.findElement(email);
         wait.until(ExpectedConditions.elementToBeClickable(emailW));
         emailW.sendKeys("Fernando");
-        Thread.sleep(100000);
+        //Thread.sleep(100000);
 
         //Ingresar contraseña
         WebElement passwordW = driver.findElement(password);
         wait.until(ExpectedConditions.elementToBeClickable(passwordW));
         passwordW.sendKeys("Colombia123");
-        Thread.sleep(100000);
+        //Thread.sleep(100000);
 
         //Confirmar contraseña
         WebElement confirmPasswordW = driver.findElement(confirmPassword);
         wait.until(ExpectedConditions.elementToBeClickable(confirmPasswordW));
         confirmPasswordW.sendKeys("Colombia123");
-        //Thread.sleep(100000);
+        //Thread.sleep(10000);
+
+        //Clic botón envíar
+        WebElement submitW=driver.findElement(submit);
+        wait.until(ExpectedConditions.visibilityOf(submitW));
+        submitW.click();
     }
     @AfterTest
     public static  void tearDown(){
