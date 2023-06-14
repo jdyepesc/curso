@@ -19,7 +19,7 @@ public class mainTets {
 
     @BeforeTest
 
-    // Fernando Sastoque Patiño
+    // Fernando Sastoque
 
     public static void setUp() {
         // Establecer la propiedad del sistema para indicar la ubicación del driver de Chrome
@@ -55,7 +55,7 @@ public class mainTets {
         WebElement confirmPasswordW = driver.findElement(confirmPassword);
         wait.until(ExpectedConditions.elementToBeClickable(confirmPasswordW));
         confirmPasswordW.sendKeys("Colombia123");
-        Thread.sleep(100000);
+        //Thread.sleep(100000);
     }
     @AfterTest
     public static  void tearDown(){
