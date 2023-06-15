@@ -19,6 +19,8 @@ public class mainTets {
     private static By signIn=By.linkText("sign-in");
     private static By UserName=By.name("userName");
     private static By passwordLog=By.name("password");
+    private static By submitLog=By.name("submit");
+    private static By LogExi=By.xpath("//h3[contains(text(),'Login Successfully')]");
 
 
 
@@ -84,6 +86,15 @@ public class mainTets {
         WebElement passwordLogW = driver.findElement(passwordLog);
         wait.until(ExpectedConditions.elementToBeClickable(passwordLogW));
         passwordLogW.sendKeys("Colombia123");
+
+        //Clic botón envíar login
+        WebElement submitLogW=driver.findElement(submitLog);
+        wait.until(ExpectedConditions.visibilityOf(submitLogW));
+        submitLogW.click();
+
+        //Confirmación texto logueo Exitoso
+        WebElement LogExiW=driver.findElement(LogExi);
+        wait.until(ExpectedConditions.visibilityOf(LogExiW));
 
 
 
