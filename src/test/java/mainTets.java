@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,6 +16,11 @@ public class mainTets {
     private static By password=By.name("password");
     private static By confirmPassword=By.name("confirmPassword");
     private static By submit=By.name("submit");
+    private static By signIn=By.linkText("sign-in");
+    private static By UserName=By.name("userName");
+    private static By passwordLog=By.name("password");
+
+
 
 
     @BeforeTest
@@ -35,10 +41,12 @@ public class mainTets {
     @Test
     public static void paginaGuru() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver,30);
+
         //Se declara y se da clic en register
         WebElement registerW=driver.findElement(register);
         wait.until(ExpectedConditions.visibilityOf(registerW));
         registerW.click();
+
         //Ingresar usuario
         WebElement emailW = driver.findElement(email);
         wait.until(ExpectedConditions.elementToBeClickable(emailW));
@@ -61,6 +69,25 @@ public class mainTets {
         WebElement submitW=driver.findElement(submit);
         wait.until(ExpectedConditions.visibilityOf(submitW));
         submitW.click();
+
+        // clic enlace sign-in
+        WebElement signInW=driver.findElement(signIn);
+        wait.until(ExpectedConditions.visibilityOf(signInW));
+        signInW.click();
+
+        //Ingreso usuario Login
+        WebElement UserNameW = driver.findElement(UserName);
+        wait.until(ExpectedConditions.elementToBeClickable(UserNameW));
+        UserNameW.sendKeys("Fernando");
+
+        //Ingreso contraseña Login
+        WebElement passwordLogW = driver.findElement(passwordLog);
+        wait.until(ExpectedConditions.elementToBeClickable(passwordLogW));
+        passwordLogW.sendKeys("Colombia123");
+
+
+
+        //Assert.assertEquals();
     }
     @AfterTest
     public static  void tearDown(){
