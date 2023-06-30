@@ -97,8 +97,8 @@ public class mainTets {
         wait.until(ExpectedConditions.visibilityOf(LogExiW));
 
 
+        Assert.assertTrue(LogExiW.isDisplayed(),"No se ha podido loguear");
 
-        //Assert.assertEquals();
     }
     @AfterTest
     public static  void tearDown(){
