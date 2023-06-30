@@ -98,6 +98,7 @@ public class mainTets {
 
 
         Assert.assertTrue(LogExiW.isDisplayed(),"No se ha podido loguear");
+        Thread.sleep(10000);
 
     }
     @AfterTest
